@@ -1,1 +1,0 @@
-{"index.js":"function factorialize(num) {\n  let val = 1;\n  for (let i = 1; i <= num; i ++){\n    val *= i;\n  }\n  return val;\n}\n\nconsole.log(factorialize(5));"}
