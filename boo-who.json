@@ -1,1 +1,17 @@
-{"index.js":"function booWho(bool) {\n  if (bool === true) {\n    return true\n  }\n  else if (bool == false) {\n    return true\n  }\n  return false;\n}\nconsole.log(booWho(1));\nbooWho(null);"}
+function booWho(bool) {
+  if (bool === true) {
+    return true  
+  }
+  else if (bool == false) {
+    return true  
+  }  
+  return false;
+  }
+}
+
+//CHECKS IF ARGUMENT IS A FALSE VALUE
+
+//EXAMPLE
+
+booWho(1); //FALSE
+booWho(null); //TRUE
