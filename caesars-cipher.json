@@ -1,1 +1,31 @@
-{"index.js":"function rot13(str) { // LBH QVQ VG!\n  var nonAlphCheck = /\\W/;\n  var alphabet = [\"A\",\"B\",\"C\",\"D\",\"E\",\"F\",\"G\",\"H\",\"I\",\"J\",\"K\",\"L\",\"M\",\"N\",\"O\",\"P\",\"Q\",\"R\",\"S\",\"T\",\"U\",\"V\",\"W\",\"X\",\"Y\",\"Z\"];\n  var input = str.split(\"\");\n  var cipher = [];\n  for (var y = 0; y < input.length; y++) {\n    if (input[y].match(nonAlphCheck)) {\n      cipher.push(input[y]);\n    } \n    else {\n      for (var i = 0; i < alphabet.length; i++) {\n        if (input[y] == alphabet[i]) {\n          if ( (i + 13) >= 26) {\n            cipher.push(alphabet[i-13]);\n          }\n          else {\n            cipher.push(alphabet[i+13]);\n          }\n        }\n      }\n    }\n  }\n  var final = cipher.join(\"\");\n  console.log(final);\n  return final;\n}\n\n// Change the inputs below to test\nrot13(\"SERR CVMMN!\")"}
+function rot13(str) { 
+  var nonAlphCheck = /\\W/; //CHECK FOR NON ALPHABET CHARACTERS
+  var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];  
+  var input = str.split(""); // SPLIT INPUT INTO ARRAY
+  var cipher = []; 
+  for (var y = 0; y < input.length; y++) { //ITERATE THROUGH EVERY LETTER OF INPUT
+    if (input[y].match(nonAlphCheck)) { // NON LETTER CHARACTERS PUT INTO OUTPUT ARRAY UNCHANGED
+      cipher.push(input[y]);
+    } 
+    else { // LETTER CHARACTERS ARE SHIFTED BY 13 SPACES
+      for (var i = 0; i < alphabet.length; i++) { 
+        if (input[y] == alphabet[i]) { // FINDS MATCHING LETTER
+          if ( (i + 13) >= 26) { // SHIFTS LETTER BY 13 SPACES IN ALPHABET
+            cipher.push(alphabet[i-13]);
+          }
+          else {
+            cipher.push(alphabet[i+13]);
+          }
+        }
+      }
+    }
+  }
+var final = cipher.join(""); // JOIN ARRAY TO MAKE STRING
+return final;
+}
+
+// CAESAR CIPHER IS A CIPHER INVOLVING A TRANSFORMATION OF THE ALPHABET 13 UNITS AWAY FROM ITS NORMAL POSITION
+
+// EXAMPLE
+
+rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.") // THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
