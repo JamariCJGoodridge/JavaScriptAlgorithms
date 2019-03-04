@@ -1,1 +1,17 @@
-{"index.js":"function truncateString(str, num) {\n  var w = str.split(\"\");\n  let newArr = [];\n  if (num < w.length) {\n    for (var i = 0; i < num; i++) {\n      newArr.push(w[i]);\n    }\n  var final = newArr.join(\"\") + \"...\";\n  return final;\n  } else { return str }\n}\n\ntruncateString(\"A-tisket a-tasket A green and yellow basket\", 8);\ntruncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)\ntruncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)"}
+function truncateString(str, num) {
+  var w = str.split("");
+  let newArr = [];
+  if (num < w.length) {
+    for (var i = 0; i < num; i++) {
+      newArr.push(w[i]);
+    }
+    var final = newArr.join("") + "...";
+    return final;
+  } else { return str }
+}
+
+// CUTS OFF STRING AFTER SPECIFIED CHARACTER LIMIT 
+
+// EXAMPLE
+truncateString("A-tisket a-tasket A green and yellow basket", 8); // A-tisket...
+truncateString("Cut-off here THIS WON'T BE SEEN", 12); // Cur-off here...
