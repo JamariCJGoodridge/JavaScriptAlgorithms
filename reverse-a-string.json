@@ -1,1 +1,15 @@
-{"index.js":"function reverseString(str) {\n  var n = str.split(\"\");\n  console.log(n);\n  var b = n.reverse(\"\");\n  console.log(b);\n  var t = b.join(\"\");\n  console.log(t);\n  return t;\n}\n\nreverseString(\"hello\");"}
+function reverseString(str) {
+  var n = str.split("");
+  console.log(n);
+  var b = n.reverse("");
+  console.log(b);
+  var t = b.join("");
+  console.log(t);
+  return t;
+}
+
+// REVERSES A STRING
+
+// EXAMPLE
+
+reverseString("hello"); // olleh
